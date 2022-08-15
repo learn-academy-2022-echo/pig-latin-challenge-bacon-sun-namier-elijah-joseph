@@ -5,11 +5,11 @@ import butcherPigImage from './assets/butcherPig.jpeg'
 const App = () => {
 
   // ACTION ITEM: to make the development process easier there are some preassigned words in the input field, when you are ready for your full user experience delete the test words passed to useState and pass an empty string
-  const [userInput, setUserInput] = useState("apple through queen squeal fry fluent")
+  const [userInput, setUserInput] = useState("")
   const [inputTranslated, setInputTranslated] = useState("")
 
   // ACTION ITEM: the "myPigLatinCodeHere" function is where you will put your logic to translate the sentence entered by the user into Pig Latin
-  const myPigLatinCodeHere = () => {
+  const myPigLatinCodeHere = (str) => {
 
     // NO MODIFICATION NEEDED: the variable "arrayOfUserInput" will contain the text input from the user split into an array of words
     const arrayOfUserInput = userInput.split(" ")
@@ -30,11 +30,36 @@ const App = () => {
         )
       })
       console.log("vowelsArray:", vowelsArray)
+//**Story 1: In order to see English words converted to Pig Latin, as the user of the application, I need to see words beginning with a vowel translated to add "way" the end.**
+
+//create function called includesVowel *need to see words beginning with a vowel translated to add "way" the end, if it doesn't start with a vowel function looks for next vowel
+
+//another function wordPig that returns vowel.. 
+//use function vowelsArray and id vowels 
+// use wordPig takes the string from includesVowel use charAt [0] + new variable to store the return the characters at the specific index in the string 
+//new variable will return if it is truthy or falsey 
+// use built in method charAt from index [0] var vowelsArray to move value at 0 to the end of string
+//
+// **Branch:** vowel-functionality
+
+// **Acceptance Criteria**
+// - Can type any word that begins with a vowel in the text input (e.g. apple)
+// - Can hit the submit button
+// - Can see the words that begin with a vowel translated to Pig Latin and rendered to the page (e.g. appleway)
 
       // ACTION ITEM: your Pig Latin logic goes here!
-
-    
-
+    //  for (let i = 0; i <str.length; i++){
+    //  let myPigLatinCodeHere = (str) => {
+    //   let eachWord = " ";
+    //   if(vowelsArray.indexOf(str[0]) > -1) {
+    //      eachWord = str + "way";
+    //   }
+    //  }
+        if (eachWord[0] === vowelsArray[0]) {
+          let newWord = eachWord.split("");
+          newWord.push("way")
+          eachWord = newWord.join("")
+        } 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
@@ -63,7 +88,7 @@ const App = () => {
   const handleInput = (e) => {
     setUserInput(e.target.value)
   }
-
+//no modification needed
   return (
     <>
       <h1>Pig Latin Translator</h1>
